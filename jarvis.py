@@ -16,7 +16,7 @@ INFO = '''
         *=======================================*
         |....JARVIS ARTIFICIAL INTELLIGENCE.....|
         +---------------------------------------+
-        |#Name: J-A-R-V-I-S         			|
+        |#Name: J-A-R-V-I-S         	      |
         |#Owner: Soumya Ranjan Biswal           |
         |#Date: 01/01/2019                      |
         *=======================================*
@@ -83,7 +83,7 @@ def call_jarvis():
             static_speech('sorry sir i can not hear your voice')
 
         # greeting am i your best frd and married
-        elif 'hi ' in voice_note or 'hello' in voice_note or 'ok' in voice_note:
+        elif 'hi ' in voice_note or 'hello' in voice_note or 'ok ' in voice_note:
             print 'In Greeting......'
             play_sound(mp3_greeting_list)
         elif 'ok google' in voice_note or 'hi google' in voice_note or 'hello google' in voice_note:
@@ -103,7 +103,7 @@ def call_jarvis():
             static_speech('you just made my day')
 
         elif 'your best friend' in voice_note or 'your friend' in voice_note:
-            static_speech('i think all my friends are best ' + textbox_inputValue)
+            static_speech('i think all my friends are best, ' + textbox_inputValue)
             static_speech('i am very lucky assistance')
 
         elif 'have boyfriend' in voice_note or 'have boy friend' in voice_note:
@@ -114,11 +114,11 @@ def call_jarvis():
             static_speech('i am married')
             static_speech('to the idea of being the perfect assistance')
 
-        elif 'marry' in voice_note or 'will you marry' in voice_note:
+        elif 'will you marry' in voice_note:
             print 'NO......'
             static_speech('I am sorry.. The person you are trying to contact is currently unavailable, please try again later or join the queue for your turn')
 
-        elif 'am i' in voice_note or 'who am i' in voice_note:
+        elif 'who am i' in voice_note:
             static_speech('i know sir')
             static_speech('you are' + textbox_inputValue)
 
@@ -152,7 +152,7 @@ def call_jarvis():
         # god exist
         elif 'god exist' in voice_note or 'god is exist' in voice_note:
             static_speech('my boss soumyo, who created me he is exist ')
-            static_speech('that means gos id exist')
+            static_speech('that means god is exist')
 
         # Birthday
         elif 'your born' in voice_note or ' you born' in voice_note or ' born' in voice_note or 'your birthday' in voice_note:
