@@ -11,6 +11,7 @@ import wmi
 import psutil
 import ctypes
 import pyautogui
+#import Test_Port as snake
 
 INFO = '''
         *=======================================*
@@ -25,7 +26,6 @@ print(INFO)
 
 # speech contain like audio
 speech = sr.Recognizer()
-
 # all variable declaration
 mp3_greeting_list = ['hiboss.mp3', 'helloboss.mp3']
 mp3_open_launch_list = ['yesboss.mp3', 'sureboss.mp3']
@@ -68,6 +68,7 @@ def read_voice_cmd():
 def static_speech(text):
     engine = pyttsx.init()
     voices = engine.getProperty('voices')
+    engine.setProperty('rate', 130)
     engine.setProperty('voice', voices[1].id)
     engine.say(text)
     engine.runAndWait()
@@ -83,7 +84,7 @@ def call_jarvis():
             static_speech('sorry sir i can not hear your voice')
 
         # greeting am i your best frd and married
-        elif 'hi ' in voice_note or 'hello' in voice_note or 'ok ' in voice_note:
+        elif 'hi ' in voice_note or 'hello' in voice_note :
             print 'In Greeting......'
             play_sound(mp3_greeting_list)
         elif 'ok google' in voice_note or 'hi google' in voice_note or 'hello google' in voice_note:
@@ -103,7 +104,7 @@ def call_jarvis():
             static_speech('you just made my day')
 
         elif 'your best friend' in voice_note or 'your friend' in voice_note:
-            static_speech('i think all my friends are best, ' + textbox_inputValue)
+            static_speech('i think all my friends are best ' + textbox_inputValue)
             static_speech('i am very lucky assistance')
 
         elif 'have boyfriend' in voice_note or 'have boy friend' in voice_note:
@@ -114,11 +115,11 @@ def call_jarvis():
             static_speech('i am married')
             static_speech('to the idea of being the perfect assistance')
 
-        elif 'will you marry' in voice_note:
+        elif 'marry' in voice_note or 'will you marry' in voice_note:
             print 'NO......'
             static_speech('I am sorry.. The person you are trying to contact is currently unavailable, please try again later or join the queue for your turn')
 
-        elif 'who am i' in voice_note:
+        elif 'am i' in voice_note or 'who am i' in voice_note:
             static_speech('i know sir')
             static_speech('you are' + textbox_inputValue)
 
@@ -138,6 +139,10 @@ def call_jarvis():
             static_speech('i can help with calculations and research')
             static_speech('it is up to you')
 
+       # elif ' game' in voice_note:
+        #    static_speech('let me play snake game for you')
+         #   snake.snake()
+
         elif 'lock my' in voice_note:
             static_speech('ok, sir')
             ctypes.windll.user32.LockWorkStation()
@@ -152,7 +157,7 @@ def call_jarvis():
         # god exist
         elif 'god exist' in voice_note or 'god is exist' in voice_note:
             static_speech('my boss soumyo, who created me he is exist ')
-            static_speech('that means god is exist')
+            static_speech('that means gos id exist')
 
         # Birthday
         elif 'your born' in voice_note or ' you born' in voice_note or ' born' in voice_note or 'your birthday' in voice_note:
@@ -214,29 +219,12 @@ def call_jarvis():
         elif 'favourite color' in voice_note:
             static_speech('i like white, black, green, red')
 
-        # Facebook open
-        elif 'open facebook' in voice_note:
-            play_sound(mp3_open_launch_list)
-            print 'In Open.......'
-            webbrowser.get(chrome_path).open("http://www.facebook.com")
 
-        # Youtube open
-        elif 'open youtube' in voice_note:
+        elif 'open ' in voice_note:
             print 'In Open.......'
             play_sound(mp3_open_launch_list)
-            webbrowser.get(chrome_path).open("http://www.Youtube.com")
-
-        # Open Twitter
-        elif 'open twitter' in voice_note:
-            print 'In Open.......'
-            play_sound(mp3_open_launch_list)
-            webbrowser.get(chrome_path).open("http://www.twitter.com")
-
-        # Open Gmail
-        elif 'open gmail' in voice_note:
-            print 'In Open.......'
-            play_sound(mp3_open_launch_list)
-            webbrowser.get(chrome_path).open("https://mail.google.com/mail/u/0/#inbox")
+            link= voice_note.replace('open ','')
+            webbrowser.get(chrome_path).open(link+".com")
 
         # GitHub Code
         elif 'code' in voice_note or 'your code' in voice_note:
@@ -332,9 +320,6 @@ def call_jarvis():
             play_sound(mp3_thanks_list)
             print 'Thanks boss'
             start_call()
-            # jarvis_frontend()
-            # pass
-            # sys.exit()
 
         elif 'search' in voice_note:
             webbrowser.open(voice_note)
