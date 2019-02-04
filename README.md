@@ -1,5 +1,8 @@
-# J.A.R.V.I.S is Artificial Intelligent Python Program
-JARVIS-LOGO: 
+#                                           J.A.R.V.I.S is Artificial Intelligent Python Program
+# ________________________________________________________________________________________________________________________________________
+
+## JARVIS-LOGO: 
+
 ![alt text](https://github.com/SOUMYARANJANBISWAL/J-A-R-V-I-S/blob/master/JARVIS.png)
 
 
