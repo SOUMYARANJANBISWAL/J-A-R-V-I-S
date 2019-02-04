@@ -9,82 +9,82 @@
 # Youtube Link:
 
 # Requirements:
-   Make sure you install these packages before moving forward to other python libraries.
+ Make sure you install these packages before moving forward to other python libraries.
 
-   `You can run pip install -r requirements.txt to install them all.`
+ `You can run pip install -r requirements.txt to install them all.`
 
-   You can install Individual packages listed as follows-
+ You can install Individual packages listed as follows-
 
-    * #### speech_recognition
-
-
-    `pip install speech_recognition`
+  * #### speech_recognition
 
 
-    * #### os
+  `pip install speech_recognition`
 
 
-    `pip install os`
+  * #### os
 
 
-    * #### playsound
+  `pip install os`
 
 
-    `pip install playsound`
+  * #### playsound
 
 
-    * #### webbrowser
+  `pip install playsound`
 
 
-    `pip install webbrowser`
+  * #### webbrowser
 
 
-    * ####  random
+  `pip install webbrowser`
 
 
-    `pip install random`
+  * ####  random
 
 
-    * ####  sys
+  `pip install random`
 
 
-    `pip install sys`
+  * ####  sys
 
 
-    * ####  time
+  `pip install sys`
 
 
-    `pip install time`
+  * ####  time
 
 
-    * ####  pyttsx
+  `pip install time`
 
 
-    `pip install pyttsx`
+  * ####  pyttsx
 
 
-    * ####  tkinter
+  `pip install pyttsx`
 
 
-    `pip install tkinter`
+  * ####  tkinter
 
 
-    * #### pyscreenshot
+  `pip install tkinter`
 
 
-    `pip install pyscreenshot`
+  * #### pyscreenshot
 
 
-    * #### wmi
+  `pip install pyscreenshot`
 
 
-    `pip install wmi`
+  * #### wmi
 
 
-    * #### psutil
+  `pip install wmi`
 
 
-    `pip install psutil`
+  * #### psutil
+
+
+  `pip install psutil`
 
 
 # How to run tests:
