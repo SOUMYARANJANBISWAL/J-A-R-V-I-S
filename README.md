@@ -88,4 +88,7 @@
 
 
 # How to run tests:
- 
+
+
+Clone this repository to your system then install all module/library
+then run jarvis.py
