@@ -12,8 +12,9 @@
 # Youtube Link:
 
 # Requirements:
- Make sure you install these packages before moving forward to other python libraries
- You can run pip install -r requirements.txt to install them all.
+ Make sure you install these packages before moving forward to other python libraries.
+ `You can run pip install -r requirements.txt to install them all.`
+ You can install Individual packages listed as follows-
 
 
 # How to run tests:
