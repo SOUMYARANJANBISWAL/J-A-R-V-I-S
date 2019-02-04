@@ -1,5 +1,5 @@
-#                                           J.A.R.V.I.S is Artificial Intelligent Python Program
-# ________________________________________________________________________________________________________________________________________
+# J.A.R.V.I.S is Artificial Intelligent Python Program
+
 
 ## JARVIS-LOGO: 
 
@@ -10,6 +10,10 @@
 
 
 # Youtube Link:
+
+# Requirements:
+ Make sure you install these packages before moving forward to other python libraries
+ You can run pip install -r requirements.txt to install them all.
 
 
 # How to run tests:
