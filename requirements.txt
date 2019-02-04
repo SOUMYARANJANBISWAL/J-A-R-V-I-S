@@ -1,1 +1,13 @@
 
+speech_recognition
+os
+playsound
+webbrowser
+random
+sys
+time
+pyttsx
+tkinter
+pyscreenshot
+wmi
+psutil
