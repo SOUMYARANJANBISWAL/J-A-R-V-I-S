@@ -62,6 +62,14 @@
   * #### psutil
 
   `pip install psutil`
+  
+  * #### ctypes
+  
+  `pip install ctypes`
+  
+  * #### pyautogui
+  
+  `pip install pyautogui`
 
 # How to run tests:
 
