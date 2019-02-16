@@ -11,13 +11,14 @@ import wmi
 import psutil
 import ctypes
 import pyautogui
+import smtplib
 #import Test_Port as snake
 
 INFO = '''
         *=======================================*
         |....JARVIS ARTIFICIAL INTELLIGENCE.....|
         +---------------------------------------+
-        |#Name: J-A-R-V-I-S         	      |
+        |#Name: J-A-R-V-I-S         			|
         |#Owner: Soumya Ranjan Biswal           |
         |#Date: 01/01/2019                      |
         *=======================================*
@@ -102,6 +103,14 @@ def call_jarvis():
         elif 'like you' in voice_note or 'love you' in voice_note:
             static_speech('thanks ' + textbox_inputValue)
             static_speech('you just made my day')
+
+        # Open Drives
+        elif 'drive' in voice_note:
+            print 'In Open.......'
+            play_sound(mp3_open_launch_list)
+            drive = voice_note[5]
+            os.system('explorer ' + drive + ':\\'.format(''))
+            print 'ok done'
 
         elif 'your best friend' in voice_note or 'your friend' in voice_note:
             static_speech('i think all my friends are best ' + textbox_inputValue)
@@ -246,13 +255,7 @@ def call_jarvis():
             static_speech('i am not really a person, i am  a i robot')
             static_speech('i had prefer to think of myself as your friend')
 
-        # Open Drives
-        elif 'drive' in voice_note:
-            print 'In Open.......'
-            play_sound(mp3_open_launch_list)
-            drive = voice_note[5]
-            os.system('explorer ' + drive + ':\\'.format(''))
-            print 'ok done'
+
 
         # For Joke
         elif ' joke' in voice_note or ' joke for me' in voice_note:
@@ -262,12 +265,12 @@ def call_jarvis():
 
         # Brightness
         elif 'brightness' in voice_note:
-            if 'decrease brightness' in voice_note:
+            if 'decrease ' in voice_note:
                 print 'ok listen.......'
                 dec = wmi.WMI(namespace='wmi')
                 methods = dec.WmiMonitorBrightnessMethods()[0]
                 methods.WmiSetBrightness(30, 0)
-            elif 'increase brightness' in voice_note:
+            elif 'increase ' in voice_note:
                 print 'ok listen.......'
                 ins = wmi.WMI(namespace='wmi')
                 methods = ins.WmiMonitorBrightnessMethods()[0]
@@ -288,12 +291,32 @@ def call_jarvis():
             percent = int(battery.percent)
             time_left = secs2hours(battery.secsleft)
             print percent
-            if percent < 40 and plugged == False:
+            if percent < 40:
                 static_speech('sir, please connect charger because i can survive only ' + time_left)
-            if percent < 40 and plugged == True:
+            if percent > 40:
                 static_speech("don't worry, sir charger is connected")
             else:
                 static_speech('sir, no need to connect the charger because i can survive ' + time_left)
+        elif 'send mail' in voice_note:
+            static_speech('ok sir')
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.ehlo()
+            server.starttls()
+            server.login('soumyabiswal033@gmail.com', 'Gpassword#167')
+            static_speech('Who is the recepient')
+            print ' tell '
+            send = read_voice_cmd().lower()
+            print send
+            static_speech('what is the subject line')
+            print 'tell'
+            subject = read_voice_cmd().lower()
+            print subject
+            static_speech('what is the message')
+            print 'tell'
+            meaasge = read_voice_cmd().lower()
+            print meaasge
+            server.sendmail('soumyabiswal033@gmail.com', send,
+                            'Subject: ' + subject + ' \n\n ' + meaasge)
 
         # Remind command
         elif 'please remind' in voice_note or 'remind it' in voice_note:
