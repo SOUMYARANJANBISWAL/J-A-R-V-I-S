@@ -7,6 +7,7 @@
 
 
 # Youtube Link:
+https://www.youtube.com/watch?v=vfYLfrbA_YY&t=35s
 
 # Requirements:
  Make sure you install these packages before moving forward to other python libraries.
